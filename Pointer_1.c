@@ -1,5 +1,25 @@
 #include <stdio.h>
 
+int *funct_address ()
+{
+  int *ptr4, i;
+  int x [6] = {0 , 1 , 2 , 3 , 40, 50};
+  ptr4 = x;
+
+  printf("printing from function \n");
+  for ( i = 0; i <=5 ; i++)
+  {
+    printf(" Value of each element [%d] address for each Element %x\n", *ptr4, ptr4);
+    ptr4++;
+  }
+  return x;
+
+}
+
+
+
+
+
 int main()
 {
 
@@ -160,9 +180,94 @@ printf(" data %x address of data %x ptr0 %x ptr1 %x ptr2 %x data of ptr0 %x data
 
 #endif
 
+/*
+this program declare a function which will return address of an array.
+if the function is called once and after that if we try to read the address then it will
+return garbage beacuse after calling the fucntion the variables are not stored in stack
+(if variable is not declared as static)
+
+--------------------------------------------
+#this fucntion is placed on top of this file
+
+
+int *funct_address ()
+{
+  int *ptr4, i;
+  static int x [6] = {0 , 1 , 2 , 3 , 40, 50};
+  ptr4 = x;
+
+  printf("printing from function \n");
+  for ( i = 0; i <=5 ; i++)
+  {
+    printf(" Value of each element [%d] address for each Element %x\n", *ptr4, ptr4);
+    ptr4++;
+  }
+  return x;
+-----------------------------------------------------------------
+  #when array if declared as regular variable ( not static)
+
+ printing from function
+ Value of each element [0] address for each Element 5f3f4a60
+ Value of each element [1] address for each Element 5f3f4a64
+ Value of each element [2] address for each Element 5f3f4a68
+ Value of each element [3] address for each Element 5f3f4a6c
+ Value of each element [40] address for each Element 5f3f4a70
+ Value of each element [50] address for each Element 5f3f4a74
+
+ ptr3 after calling fucntion 5f3f4a60
+
+ Element[0] = 1245249667 address of element 5f3f4a60
+ Element[1] = 1827827464 address of element 5f3f4a64
+ Element[2] = 0 address of element 5f3f4a68
+ Element[3] = 0 address of element 5f3f4a6c
+ Element[4] = 0 address of element 5f3f4a70
+ Element[5] = 0 address of element 5f3f4a74
+
+here, even though main is reading the correct memory location, values are all garbage due to
+stack gets cleared
+
+
+ #if static variable is declared in function:
+ result:
+ printing from function
+ Value of each element [0] address for each Element 3329020
+ Value of each element [1] address for each Element 3329024
+ Value of each element [2] address for each Element 3329028
+ Value of each element [3] address for each Element 332902c
+ Value of each element [40] address for each Element 3329030
+ Value of each element [50] address for each Element 3329034
+
+ ptr3 after calling fucntion 3329020
+
+ Element[0] = 0 address of element 3329020
+ Element[1] = 1 address of element 3329024
+ Element[2] = 2 address of element 3329028
+ Element[3] = 3 address of element 332902c
+ Element[4] = 40 address of element 3329030
+ Element[5] = 50 address of element 3329034
+
+}
+
+}
+*/
 
 
 
+
+
+
+int *ptr3, i;
+
+ptr3 = funct_address();
+
+printf("ptr3 after calling fucntion %x\n",ptr3 );
+
+for (i = 0 ; i <= 5 ; i++)
+{
+  printf(" Element[%d] = %d address of element %x \n",i, ptr3[i], &ptr3[i]);
+
+
+}
 
 
 
