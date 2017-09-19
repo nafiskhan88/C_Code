@@ -16,7 +16,24 @@ int *funct_address ()
 
 }
 
+int reverse(int x) {
+    int Number , ReverseNumber;
 
+    Number = x;
+
+    while (Number!= 0)
+    {
+
+        ReverseNumber = ReverseNumber *10 + Number % 10;
+
+        Number = Number / 10 ;
+
+
+    }
+
+    return ReverseNumber;
+
+}
 
 
 
@@ -254,7 +271,7 @@ stack gets cleared
 
 
 
-
+#if 0
 
 int *ptr3, i;
 
@@ -271,8 +288,7 @@ for (i = 0 ; i <= 5 ; i++)
 
 
 
-
-
+#endif
 
 
 
@@ -303,6 +319,21 @@ printf(" A1 %d\n A2 %d\n A3 %d\n  ",a1, a2, a3 );
 //printf("char %c\n address %x\n",b, p);
 
 #endif
+
+
+ int y = 12345 , z;
+
+ z = reverse(y);
+
+ printf(" reverse Number %d\n",z );
+
+
+
+
+
+
+
+
 
 return 0;
 }
