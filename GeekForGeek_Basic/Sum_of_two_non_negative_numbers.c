@@ -64,7 +64,7 @@ return 0;
 }
 #endif
 
-#if 1
+#if 0
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -116,4 +116,64 @@ int main() {
 
 	return EXIT_SUCCESS;
 }
+#endif
+
+
+#if 1
+
+int main() {
+    int i,j,k,n,l;
+    char str1[100],str2[100],str3[100],c,ref[100];
+    scanf("%d",&n);
+    while(n--)
+    {
+        k=0;
+        scanf("%s%s",str1,str2);
+        strcpy(ref,str1);
+        for(i=0;i<strlen(str1);i++)
+        str3[i]='0';
+        if(strlen(str1)>strlen(str2))
+        {
+		l=strlen(str1);
+         for(i=0;i<strlen(str1);i++)
+         str3[strlen(str1)-strlen(str2)+i]=str2[i];
+     }
+        else
+        {
+		l=strlen(str2);
+        for(i=0;i<strlen(str2);i++)
+        str3[strlen(str2)-strlen(str1)+i]=str1[i];
+        strcpy(str1,str2);
+        }
+		j=0;
+        for(i=l-1;i>=0;i--)
+        {
+        c=str1[i]+str3[i]+k;
+        if(c-48<=57)
+        {
+    	str2[j++]=c-48;
+    	k=0;
+        }
+    	else
+    	{
+    	str2[j++]=c-58;
+    	k=1;
+    	}
+        }
+        if(k==1)
+        {
+        	str2[j++]=1;
+		}
+        if(j==strlen(ref))
+        for(i=j-1;i>=0;i--)
+        printf("%c",str2[i]);
+        else
+        printf("%s",ref);
+        printf("\n");
+    }
+	//code
+	return 0;
+}
+
+
 #endif
