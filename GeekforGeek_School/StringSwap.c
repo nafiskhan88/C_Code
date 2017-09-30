@@ -27,9 +27,9 @@ int main() {
 
         //string3[i] = ( i % 2) ? string1 [i] : string2 [i];
 
-        string3[i] = string1 [i];
-        i++;
+        int a = i % 2;
 
+        string3 [i]  = (a == 0 )? string
 
 
 
