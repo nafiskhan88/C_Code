@@ -5,83 +5,71 @@
 
 
 int main() {
-    const char string1 [10000] = "Hello";
-    const char string2 [10000] = "bye";
+
     //int testcase;
 
     //while (testcase--)
     //{
-    //char string1[10000];
-    //char string2[10000];
+    char string1[10000] = "abc";
+    char string2[10000] = "uvwxyz";
 
-    //scanf("%s %s\n",&string1, string2 );
+    //scanf("%s %s\n",string1, string2 );
 
-    int i , j = 0, k = 0, n;
+    int i , j = 0, k = 0, a= 0;
 
-    //printf("%s %s %s\n",strcpy (string1, string2), string2, string1 );
 
     int length1 = strlen(string1);
 
     int length2 = strlen(string2);
 
-    //int newstrlen = (length1 >= length2) ? 2*length1 : 2*length2;
+    int newstrlen = (length1 <= length2) ? 2*length1 : 2*length2;
 
-    //printf("%d %d\n",newstrlen, length1 );
+    char string3 [10000] = {0};
 
-    char string3 [10000] = "0";
-
-    //printf("%s %s %s\n",string3, string1, string2 );
-
-    for (i = 0; i <length1; i++)
+    for (i = 0; i <newstrlen; i++)
     {
+      a = i % 2;
+      if ( a == 0)
+      {
       string3[i] = string1 [j];
       j++;
-      i= i+2;
-      printf("%c %c %d %d\n",string3[i], string1[j], j , i );
-    }
 
-    for (n = 1; n <length2; n++)
-    {
-      string3[n] = string1 [k];
-      n = n+2;
+      }
+      else
+      {
+      string3 [i] = string2 [k];
       k++;
-      printf("%c %c\n",string3[n], string2[k] );
+
+      }
+
     }
 
-printf("%s\n",string3 );
+    int addrest = newstrlen/2 ;
 
-
-
-
-
-
-    #if 0
-    for ( i = 0; i < newstrlen ; i ++)
+    if (length1 > length2 )
     {
-
-        int a = i % 2;
-
-        if ( a == 0){
-            //if (string1[i] == ' ')
-                //continue;
-            string3 [i] = string1 [j ];
-            //printf("j %c %c\n",string3[i], string1[j] );
-            j++;
-            }
-
-        else
-            {
-            string3[i] = string2[k];
-            //printf("k %c %c\n",string3[i], string2[k] );
-            k++;
-            }
-
-    //if
-        printf(" it i = %d a =%d j = %d k =%d\n",i, a, j ,k );
-
+      while(string1[addrest] != '\0'  )
+      {
+      string3 [i] = string1 [addrest];
+      i++;
+      addrest++;
+      }
+      string3[i] = '\0';
+      printf("%s\n",string3 );
     }
-  //}
-    #endif
+    else
+
+      while(string2[addrest] != '\0'  )
+      {
+        string3 [i] = string2 [addrest];
+        i++;
+        addrest++;
+      }
+      string3[i] = '\0';
+      printf("%s\n",string3 );
+
+
+
 
 
 
