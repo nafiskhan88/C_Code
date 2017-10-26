@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include <math.h>
 
 
 int main()
@@ -15,39 +14,28 @@ int main()
 //while (testcase--){
 
 
-int num1 = 23;
-
+int num1 = 2;
+int num2 = 3;
 
 //scanf("%s\n", string );
 
-char odd_bit = 0;
-char even_bit = 0;
 
 
-int num2 = 1;
-int result = 0;
+
+int result = 0xFFFFFFFF;
+
 
 int i = 0;
 
-while (num1 != 0)
+for (i = num1; i <= num2 ; i++)
+{
 
-{ 
+  result = result & i; 
 
-  int bit1 = num1 % 2;
-
-  num1 = num1 / 2;
-
-  result =result +  (num2 << bit1);
-
-
-  //x=(a)*(pow(2,i))+x;
-  printf("%d %d\n",bit1 , result);
-
-  i++;
 
 }
 
-
+printf("i %d result %d\n",i , result);
 
 
 
