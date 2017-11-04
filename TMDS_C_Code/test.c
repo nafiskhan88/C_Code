@@ -4,7 +4,7 @@
 int NumberofOne(int value){
 
     unsigned int count = 0;
-
+    
 
     while (value > 0) {           // until all bits are zero
         if ((value & 1) == 1)     // check lower bit
@@ -27,7 +27,7 @@ unsigned char i,N1,N0, data, D1, N1_qm, N0_qm;
 unsigned char q_m[8];
 unsigned char D[8];
 unsigned short temp;
-unsigned char q_out[10];
+unsigned char q_out[10]; 
 unsigned char cnt_t_1 = 0;
 unsigned char temp1[1],temp2[1];
 

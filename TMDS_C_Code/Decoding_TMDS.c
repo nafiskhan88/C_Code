@@ -5,7 +5,7 @@
 int main()
 {
 
-unsigned char i , D[10], temp = 0, q_out[8] = {0};
+unsigned char i , D[10], temp = 0, q_out[8] = {0}; 
 int data, input ;
 
 
@@ -24,13 +24,13 @@ input = 0x38C;
 
             for (i = 0; i <= 7 ; i++)
             {
-        	   D[i] = !D[i];
+        	   D[i] = !D[i]; 
         	   //printf("D[9] = 1 Bit position:%1X D[i]:%X\n", i, D[i]);
     	   }
 
         } //endif D[9] = 1
 
-
+        
         if (D[8] == 1)
         {
             q_out[0] = D[0];
