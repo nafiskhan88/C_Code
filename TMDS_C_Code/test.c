@@ -4,7 +4,7 @@
 int NumberofOne(int value){
 
     unsigned int count = 0;
-    
+
 
     while (value > 0) {           // until all bits are zero
         if ((value & 1) == 1)     // check lower bit
@@ -27,7 +27,7 @@ unsigned char i,N1,N0, data, D1, N1_qm, N0_qm;
 unsigned char q_m[8];
 unsigned char D[8];
 unsigned short temp;
-unsigned char q_out[10]; 
+unsigned char q_out[10];
 unsigned char cnt_t_1 = 0;
 unsigned char temp1[1],temp2[1];
 
@@ -64,9 +64,9 @@ unsigned char temp1[1],temp2[1];
       }   //end for loop for q_m[8:0]
   }
 
-  else 
+  else
   {
-      
+
       q_m[0] = D[0];
       printf("q_m[0] : %x\n",q_m[0] );
       for (i = 1; i <= 8; i++)
@@ -81,7 +81,7 @@ unsigned char temp1[1],temp2[1];
 
   }
 
-    
+
         temp2 [1] = 0;
         temp2 [1] = q_m[8] ;
         //printf("temp2:%x\n",temp2[1]);
@@ -89,8 +89,8 @@ unsigned char temp1[1],temp2[1];
         q_out[8] = temp2[1];
         //printf("q_m[8]:%x\n",temp2[0]); //NEED to know : when uisng int type variable for transfering q_m[8] then q_m[8]value changes
 
-    
-      
+
+
         temp1[1] = 0;
         //printf("q_m [8]:%x\n",q_m[8] );
         if (q_m[8] == 1)
@@ -113,7 +113,7 @@ unsigned char temp1[1],temp2[1];
           //printf("else Bit position:%1X temp1:%X q_out%x\n", i, temp1[1], q_out[i]);
           }
         }
-    
+
 
       temp = 0x0;
       for (i=0; i<10; i++)
@@ -131,14 +131,14 @@ unsigned char temp1[1],temp2[1];
         for (i= 0 ; i < 8; i++)
         {
         temp1[1] = (q_m[i] ) ;
-        q_out[i] = ! (temp1[1]) ; 
+        q_out[i] = ! (temp1[1]) ;
         //printf("Bit position:%1X q_out:%X\n", i, q_out[i]);
         }
 
         temp = 0x0;
 
         for (i=0; i<10; i++)
-        
+
         {
         temp += (q_out[i] << i);
         //printf("q_m[%X]:%X q_out [%X]:%X\n", i, q_m[i],i, q_out[i]);
@@ -155,11 +155,11 @@ unsigned char temp1[1],temp2[1];
         for (i= 0 ; i < 8; i++)
         {
         //temp1 = (q_m[i] ) ;
-        q_out[i] = q_m[i] ; 
+        q_out[i] = q_m[i] ;
         //printf("Bit position:%1X q_out:%X\n", i, q_out[i]);
         }
 
-      
+
 
         temp = 0x0;
 
@@ -167,7 +167,7 @@ unsigned char temp1[1],temp2[1];
         {
         temp += (q_out[i] << i);
         //printf("q_m[%X]:%X q_out [%X]:%X\n", i, q_m[i],i, q_out[i]);
-        
+
         }
         printf("3rd :%X\n",temp );
 
@@ -221,7 +221,7 @@ for (i=0; i<8; i++)
     {
         y1 += (bitout[i] << i);
         //printf("%x Bit Number%d\n",bitout[i], i );
-        
+
     }
 
 printf("%x\n", y1);
