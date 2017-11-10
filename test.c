@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdbool.h>
+#include <time.h>
+#include <stdlib.h>
+
+int test;
+
 
 int main()
 {
@@ -10,12 +16,21 @@ int main()
 
 
 //while (testcase--){
-
-//int num1 = 0xAA;
-//printf("%d\n",size );
-
+srand(time(NULL));
 int i;
+int sum = 0;
 
+int a = 0;
+
+for (i  = 0; i < 10 ; i++)
+{
+a = rand();
+
+//printf("%x\n", a % 10);
+}
+
+
+int n = 5;
 
 
 
@@ -24,7 +39,7 @@ int i;
 
 
 
-
+//printf("%d\n",i );
 
 return 0;
 }
