@@ -19,7 +19,7 @@ int main()
 //char string [10000];
 //scanf("%s\n", string );
 
-int number = 11;
+int number = 0xAA55;
 int reminder = 0;
 int binary[10000] = {0};
 int i = 0 ;
@@ -36,7 +36,7 @@ while ( number!= 0)
 
 for (j = i -1 ; j >=0 ; j--)
 {
-  printf("%d\n",binary[j] );
+  printf("%d",binary[j] );
 }
 
 printf("\n");
