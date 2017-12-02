@@ -3,9 +3,14 @@
 #include <stdbool.h>
 #include <math.h>
 
+
+
+
 int main()
 {
 
+
+  #if 0 
   char binary[] = "0110001";
   char newBinary[1000];
   //printf("%s\n", binary); 
@@ -65,9 +70,12 @@ int main()
   }
 
 
+
 printf("Origina - 1 %s\n",newBinary );
-
-
+  #endif
+  int var = 4;
+  int bit = 1;
+  printf("%x\n", var & bit);
 
   return 0;
 }
