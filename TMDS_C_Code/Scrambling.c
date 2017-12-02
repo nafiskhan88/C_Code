@@ -58,7 +58,7 @@ int advanceLFSR(int count, int lfsrSeed){
 
     newlfsr = 0x0;
 
-    for (i=0; i<16; i++)                          //cobverting LFSR from an array to integer
+    for (i=0; i<16; i++)                          //converting LFSR from an array to integer
     {
         newlfsr += (bitout[i] << i);
         //printf("%x\n Bit Number%d\n",bit[i], i );
@@ -122,7 +122,7 @@ Initial seed value for CH2= 0xFFFD
 */
 
 
-int i = 526;
+int i = 85;
 
 
 
