@@ -43,8 +43,8 @@ input = 0x38C;
             }
         }
 
-        else 
-        { 
+        else
+        {
             for (i = 1 ; i <= 7 ; i ++)
 
             {
