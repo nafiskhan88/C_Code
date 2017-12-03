@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <time.h>
 #include <stdlib.h>
 
@@ -118,6 +119,16 @@ for ( i = 0 ; i < length ; i++)
 //printf("%d\n",i );
 #endif
 =======
+
+>>>>>>> 10d0c9f34a68d627c045762f14d3348eafd00bec
+=======
+#include <math.h>
+
+
+
+
+int main()
+{
 
 >>>>>>> 10d0c9f34a68d627c045762f14d3348eafd00bec
 
