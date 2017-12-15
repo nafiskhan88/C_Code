@@ -1,5 +1,5 @@
 // C++ program to check if a string is valid or not.
-#include <bits/stdc++.h>
+#include <stdio.h>
 using namespace std;
 
 // Function returns 1 when string is valid
